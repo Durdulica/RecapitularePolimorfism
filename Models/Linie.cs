@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Recapitulare.Models
+﻿namespace Recapitulare.Models
 {
-    internal class Linie
+    public class Linie : Punct
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+        Punct a, b;
+
+        public Linie(Punct a, Punct b) : base()
+        {
+            this.a = a;
+            this.b = b;
+        }
     }
 }
