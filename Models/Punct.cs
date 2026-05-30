@@ -1,8 +1,7 @@
 ﻿namespace Recapitulare.Models
 {
-    public class Punct
+    public class Punct : Figura
     {
-        public Guid Id { get; set; }
         public int x { get; set; }
         public int y { get; set; }
 
@@ -18,16 +17,20 @@
             this.y = y;
         }
 
-        public Punct(string text)
+        public override void Afisare()
         {
-            string[] cuv = text.Split(',');
-            Id = Guid.Parse(cuv[0]);
-            x = int.Parse(cuv[1]);
-            y = int.Parse(cuv[2]);
+            Console.Write("(" + x + "," + y + ")");
         }
 
-        public override string ToString() {
-            return Id + "," + x + "," + y;
+        public override void Translatare(int dx, int dy)
+        {
+            x += dx;
+            y += dy;
+        }
+
+        public override Figura Duplicare()
+        {
+            return new Punct(x, y);
         }
     }
 }

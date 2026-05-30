@@ -1,12 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Recapitulare.Models
+﻿namespace Recapitulare.Models
 {
-    internal class Dreptunghi
+    public class Dreptunghi : Figura
     {
+        public Punct StSus { get; set; } = new Punct();
+        public Punct DrJos { get; set; } = new Punct();
+
+        public Dreptunghi(Punct stSus, Punct drJos)
+        {
+            StSus = stSus;
+            DrJos = drJos;
+        }
+
+        public override void Afisare()
+        {
+            StSus.Afisare();
+            Console.Write(" ");
+            DrJos.Afisare();
+        }
+
+        public override void Translatare(int dx, int dy)
+        {
+            StSus.Translatare(dx, dy);
+            DrJos.Translatare(dx, dy);
+        }
+
+        public override Figura Duplicare()
+        {
+            return new Dreptunghi(StSus, DrJos);
+        }
     }
 }

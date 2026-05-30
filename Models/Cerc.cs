@@ -2,11 +2,10 @@
 {
     public class Cerc : Punct
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
         public Punct a;
         public int raza;
 
-        public Cerc(Punct a, int raza) : base(a.x, a.y)
+        public Cerc(int x, int y, int raza) : base(x,y)
         {
             Raza = raza;
         }
@@ -22,6 +21,22 @@
                 }
                 raza = value;
             }
+        }
+
+        public override void Afisare()
+        {
+            a.Afisare();
+            Console.Write(", raza: " + Raza);
+        }
+
+        public override void Translatare(int dx, int dy)
+        {
+            a.Translatare(dx, dy);
+        }
+
+        public override Figura Duplicare()
+        {
+            return new Cerc(x,y,Raza);
         }
     }
 }
