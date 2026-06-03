@@ -1,14 +1,30 @@
 # Recapitulare Polimorfism
 
-Trei exercitii progresive de OOP / polimorfism in C# (.NET 8). Fiecare exercitiu e independent — propriul `.csproj`, propriul `Cerinta.md`.
+Trei exercitii progresive de OOP / polimorfism in C# (.NET 8). Fiecare exercitiu e independent — propriul `.csproj`, propriul `Cerinta.md`. Toate sunt legate de un `Recapitulare.sln` la root, ca sa le poti deschide impreuna in IDE.
 
 ## Cum rulezi un exercitiu
 
+**Din IDE (Rider, Visual Studio, VS Code):**
+- Deschide folderul root sau `Recapitulare.sln`.
+- In Rider/VS, dreapta-click pe proiectul dorit (ex `Recapitulare` = ex1, `SistemFisiere` = ex2, `Expresii` = ex3) → **Set as Startup Project** → apoi Run (▶).
+
+**Din terminal:**
+
 ```bash
-cd ex2
-dotnet build      # verifica compilarea
-dotnet run        # ruleaza demo-ul din Program.cs
+# Ruleaza ex1 (figuri geometrice - deja rezolvat)
+dotnet run --project ex1
+
+# Ruleaza ex2 (sistem fisiere - starter, Main e gol)
+dotnet run --project ex2
+
+# Ruleaza ex3 (expresii - starter, Main e gol)
+dotnet run --project ex3
+
+# Build pentru toate 3 simultan
+dotnet build
 ```
+
+**Daca rulezi ex2 sau ex3 si nu vezi output:** e normal — `Program.cs` are doar TODO-uri. Trebuie sa scrii codul demo dupa ce implementezi clasele.
 
 ## Exercitii
 
