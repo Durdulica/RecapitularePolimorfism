@@ -1,12 +1,14 @@
 ﻿namespace Recapitulare.Models
 {
-    public class Cerc : Punct
+    public class Cerc : Figura
     {
-        public Punct a;
-        public int raza;
+        public Punct a { get; set; } = new();
+        public int raza { get; set; }
 
-        public Cerc(int x, int y, int raza) : base(x,y)
+        public Cerc(int x, int y, int raza)
         {
+            a.x = x;
+            a.y = y;
             Raza = raza;
         }
 
@@ -25,6 +27,7 @@
 
         public override void Afisare()
         {
+            Console.Write("Cerc: ");
             a.Afisare();
             Console.Write(", raza: " + Raza);
         }
@@ -36,7 +39,7 @@
 
         public override Figura Duplicare()
         {
-            return new Cerc(x,y,Raza);
+            return new Cerc(a.x, a.y, Raza);
         }
     }
 }

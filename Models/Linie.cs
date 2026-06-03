@@ -2,7 +2,8 @@
 {
     public class Linie : Figura
     {
-        Punct a, b;
+        public Punct a {  get; set; }
+        public Punct b { get; set; }
 
         public Linie(Punct a, Punct b)
         {
@@ -12,6 +13,7 @@
 
         public override void Afisare()
         {
+            Console.Write("Linie: ");
             a.Afisare();
             Console.Write(" ");
             b.Afisare();

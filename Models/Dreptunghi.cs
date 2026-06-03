@@ -2,8 +2,8 @@
 {
     public class Dreptunghi : Figura
     {
-        public Punct StSus { get; set; } = new Punct();
-        public Punct DrJos { get; set; } = new Punct();
+        public Punct StSus { get; set; }
+        public Punct DrJos { get; set; }
 
         public Dreptunghi(Punct stSus, Punct drJos)
         {
@@ -13,6 +13,7 @@
 
         public override void Afisare()
         {
+            Console.Write("Dreptunghi: ");
             StSus.Afisare();
             Console.Write(" ");
             DrJos.Afisare();

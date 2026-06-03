@@ -1,20 +1,17 @@
 ﻿namespace Recapitulare.Models
 {
-    public class Eticheta : Figura
+    public class Eticheta : Dreptunghi
     {
-        public Punct StSus { get; set; } = new Punct();
-        public Punct DrJos { get; set; } = new Punct();
         public string Text { get; set; }
 
-        public Eticheta(Punct stSus, Punct drJos, string text)
+        public Eticheta(Punct stSus, Punct drJos, string text) : base(stSus, drJos)
         {
-            StSus = stSus;
-            DrJos = drJos;
             Text = text;
         }
 
         public override void Afisare()
         {
+            Console.Write("Eticheta: ");
             StSus.Afisare();
             Console.Write("  " + Text + "  ");
             DrJos.Afisare();
