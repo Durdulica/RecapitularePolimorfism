@@ -1,0 +1,73 @@
+# ============================================================
+# .NET build output
+# ============================================================
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+*.dll
+*.exe
+*.pdb
+
+# Build logs
+*.binlog
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# ============================================================
+# Test results
+# ============================================================
+TestResults/
+[Tt]est[Rr]esult*/
+*.coverage
+*.coveragexml
+
+# ============================================================
+# NuGet
+# ============================================================
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# ============================================================
+# Visual Studio / Rider / VS Code
+# ============================================================
+.vs/
+.idea/
+.vscode/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.DotSettings.user
+
+# ============================================================
+# Sistem de operare
+# ============================================================
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ============================================================
+# Diverse
+# ============================================================
+*.log
+*.tmp
+*.bak
+*.swp

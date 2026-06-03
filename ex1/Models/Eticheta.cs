@@ -1,9 +1,9 @@
-﻿namespace Recapitulare.Models
+namespace Recapitulare.Models
 {
     public class Eticheta : Figura
     {
-        public Punct StSus { get; set; } = new Punct();
-        public Punct DrJos { get; set; } = new Punct();
+        public Punct StSus { get; set; }
+        public Punct DrJos { get; set; }
         public string Text { get; set; }
 
         public Eticheta(Punct stSus, Punct drJos, string text)
@@ -15,8 +15,9 @@
 
         public override void Afisare()
         {
+            Console.Write("Eticheta \"" + Text + "\": ");
             StSus.Afisare();
-            Console.Write("  " + Text + "  ");
+            Console.Write(" - ");
             DrJos.Afisare();
         }
 
@@ -28,8 +29,7 @@
 
         public override Figura Duplicare()
         {
-            return new Eticheta(StSus, DrJos, Text);
+            return new Eticheta((Punct)StSus.Duplicare(), (Punct)DrJos.Duplicare(), Text);
         }
-
     }
 }
