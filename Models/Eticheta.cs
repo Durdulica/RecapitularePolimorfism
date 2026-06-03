@@ -25,7 +25,7 @@
 
         public override Figura Duplicare()
         {
-            return new Eticheta(StSus, DrJos, Text);
+            return new Eticheta((Punct)StSus.Duplicare(), (Punct)DrJos.Duplicare(), Text);
         }
 
     }

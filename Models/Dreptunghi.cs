@@ -27,7 +27,7 @@
 
         public override Figura Duplicare()
         {
-            return new Dreptunghi(StSus, DrJos);
+            return new Dreptunghi((Punct)StSus.Duplicare(), (Punct)DrJos.Duplicare());
         }
     }
 }

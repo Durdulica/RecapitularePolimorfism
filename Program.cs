@@ -1,17 +1,21 @@
-﻿using Recapitulare;
-using Recapitulare.Models;
+﻿using Recapitulare.Models;
 
 internal class Program
 {
     public static void Main()
     {
-        Desen desen = new Desen();
+        List<Figura> figuri = new();
+        
         Punct a = new Punct(1,1);
         Punct b = new Punct(2,2);
+        Eticheta eticheta = new(a, b, "test");
 
-        Eticheta linie = new(a, b, "test");
+        figuri.Add(a);
+        figuri.Add(b);
+        figuri.Add(eticheta);
 
-        desen.CreazaFigura(linie);
-        desen.AfisareFiguri();
+        Desen desen = new Desen(figuri);
+
+        desen.Afisare();
     }
 }
