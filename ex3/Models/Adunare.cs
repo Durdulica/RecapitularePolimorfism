@@ -13,19 +13,23 @@ namespace Expresii.Models
 
         public override double Evaluare(Context ctx)
         {
-            throw new NotImplementedException();
+            return Stanga.Evaluare(ctx) + Dreapta.Evaluare(ctx);
         }
 
         public override void Afisare()
         {
             // Format dorit: "(stanga + dreapta)" cu paranteze
-            throw new NotImplementedException();
+            Console.Write("(");
+            Stanga.Afisare();
+            Console.Write(" + ");
+            Dreapta.Afisare();
+            Console.Write(")");
         }
 
         public override Expresie Derivare(string variabila)
         {
             // (a + b)' = a' + b'
-            throw new NotImplementedException();
+            return new Adunare(Stanga.Derivare(variabila), Dreapta.Derivare(variabila));
         }
     }
 }

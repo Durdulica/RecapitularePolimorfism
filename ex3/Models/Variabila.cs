@@ -12,18 +12,24 @@ namespace Expresii.Models
         public override double Evaluare(Context ctx)
         {
             // Hint: ctx.GetValoare(Nume)
-            throw new NotImplementedException();
+            return ctx.GetValoare(Nume);
         }
 
         public override void Afisare()
         {
-            throw new NotImplementedException();
+            Console.Write(Nume);
         }
 
         public override Expresie Derivare(string variabila)
         {
             // Hint: daca Nume == variabila, derivata e 1. Altfel 0.
-            throw new NotImplementedException();
+
+            if (Nume == variabila) {
+
+                return new Constanta(1);
+            }
+
+            return new Constanta(0);
         }
     }
 }
