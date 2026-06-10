@@ -11,18 +11,19 @@ namespace Expresii.Models
 
         public override double Evaluare(Context ctx)
         {
-            throw new NotImplementedException();
+            return Valoare;
         }
 
         public override void Afisare()
         {
-            throw new NotImplementedException();
+            Console.Write(Valoare);
         }
 
         public override Expresie Derivare(string variabila)
         {
             // Hint: derivata unei constante e 0 (deci o noua Constanta(0)).
-            throw new NotImplementedException();
+
+            return new Constanta(0);
         }
     }
 }

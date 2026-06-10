@@ -13,19 +13,24 @@ namespace Expresii.Models
 
         public override double Evaluare(Context ctx)
         {
-            throw new NotImplementedException();
+            return Stanga.Evaluare(ctx) * Dreapta.Evaluare(ctx);
         }
 
         public override void Afisare()
         {
-            throw new NotImplementedException();
+            Stanga.Afisare();
+            Console.Write(" * ");
+            Dreapta.Afisare();
         }
 
         public override Expresie Derivare(string variabila)
         {
             // Regula produsului: (a * b)' = a' * b + a * b'
             // Atentie: trebuie sa construiesti un arbore Adunare(Inmultire(...), Inmultire(...))
-            throw new NotImplementedException();
+
+            Context ctx = new Context();
+
+            return new Adunare(new Inmultire(Stanga.Derivare(variabila), Dreapta), new Inmultire(Stanga,Dreapta.Derivare(variabila)));
         }
     }
 }

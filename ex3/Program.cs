@@ -24,5 +24,21 @@ internal class Program
         //    Afiseaz-o (va fi un arbore stufos, dar matematic echivalent cu 2x + 1).
         //
         // 6. Evalueaza derivata pentru x = 5 (asteptat: 11).
+
+
+        Inmultire e = new Inmultire(
+            new Adunare(new Variabila("x"), new Constanta(3)),
+            new Scadere(new Variabila("x"), new Constanta(2))
+        );
+
+        e.Afisare();
+        Console.WriteLine();
+
+        Context ctx = new Context();
+        ctx.Seteaza("x", 5);
+
+        Console.WriteLine(e.Evaluare(ctx));
+
+        Console.WriteLine(e.Derivare("x").Evaluare(ctx));
     }
 }
