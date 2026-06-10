@@ -11,17 +11,22 @@ namespace SistemFisiere.Models
 
         public override long DimensiuneTotala()
         {
-            throw new NotImplementedException();
+            return Dimensiune;
         }
 
         public override void Afisare(int nivel)
         {
-            throw new NotImplementedException();
+            while(nivel > 0)
+            {
+                Console.Write(" ");
+                nivel--;
+            }
+            Console.WriteLine("[FILE] " + Nume + " (" + Dimensiune + " bytes)");
         }
 
         public override Element Cauta(string nume)
         {
-            throw new NotImplementedException();
+            return Nume == nume ? this : null;
         }
     }
 }

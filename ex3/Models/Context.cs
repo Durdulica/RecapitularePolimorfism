@@ -31,6 +31,12 @@ namespace Expresii.Models
             numeTemp[numeTemp.Length - 1] = nume;
             valoriTemp[valoriTemp.Length - 1] = valoare;
 
+            for (int i = 0; i < Nume.Length; i++)
+            {
+                numeTemp[i] = Nume[i];
+                valoriTemp[i] = Valori[i];
+            }
+
             Nume = numeTemp;
             Valori = valoriTemp;
         }
@@ -47,7 +53,7 @@ namespace Expresii.Models
                 }
             }
 
-            throw new ArgumentException("Variabila nu este cunoscuta");
+            throw new ArgumentException("Unknown variable: " + nume);
         }
     }
 }

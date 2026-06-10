@@ -28,8 +28,6 @@ namespace Expresii.Models
             // Regula produsului: (a * b)' = a' * b + a * b'
             // Atentie: trebuie sa construiesti un arbore Adunare(Inmultire(...), Inmultire(...))
 
-            Context ctx = new Context();
-
             return new Adunare(new Inmultire(Stanga.Derivare(variabila), Dreapta), new Inmultire(Stanga,Dreapta.Derivare(variabila)));
         }
     }

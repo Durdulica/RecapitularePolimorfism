@@ -18,5 +18,21 @@ internal class Program
         // 3. Cauta "notes.txt" si afiseaza dimensiunea lui
         // 4. Cauta "inexistent.txt" si trateaza cazul null
         // 5. Sterge "app.exe" si afiseaza din nou ierarhia
+
+        Director root = new Director("root");
+
+        Director dir = new Director("docs");
+        Fisier file1 = new Fisier("readme.txt", 500);
+        Fisier file2 = new Fisier("notes.txt", 300);
+        Fisier file3 = new Fisier("app.exe", 700);
+        dir.Adauga(file1);
+        dir.Adauga(file2);
+        root.Adauga(dir);
+        root.Adauga(file3);
+
+        Console.WriteLine(root.DimensiuneTotala());
+        root.Afisare(0);
+        root.Sterge("app.exe");
+        root.Afisare(0);
     }
 }

@@ -15,10 +15,10 @@
         {
             double val = Dreapta.Evaluare(ctx);
             if (val == 0) {
-                throw new ArgumentException("Impartirea cu 0 este imposibila");
+                throw new ArgumentException("Division by 0");
             }
 
-            return Stanga.Evaluare(ctx) / Dreapta.Evaluare(ctx);
+            return Stanga.Evaluare(ctx) / val;
         }
 
         public override void Afisare()
